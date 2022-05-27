@@ -4,11 +4,11 @@
   "description": "",
   "main": "server.js",
   "engines": {
-    "node": "12.11.1"
-    },
+    "node": "16.x"
+  },
   "scripts": {
-    "dev": "nodemon server.js",
-    "start":"node server.js"
+    "start":"node server.js",
+    "dev": "nodemon server.js"
   },
   "keywords": [],
   "author": "",
