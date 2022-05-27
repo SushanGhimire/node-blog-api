@@ -13,8 +13,10 @@ const app = express();
 app.use(cors());
 
 // db connection
-mongoose.connect(process.env.DB_URL, { useNewUrlParser: true }, () =>
-  console.log("connected to database...")
+mongoose.connect(
+  process.env.DB_URL,
+  { useNewUrlParser: true, useUnifiedTopology: true },
+  () => console.log("connected to database...")
 );
 //
 
