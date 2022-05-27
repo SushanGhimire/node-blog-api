@@ -24,6 +24,8 @@ app.use(express.json());
 app.use("/blogs", blogRouter);
 app.use("/user", userRoute);
 
-app.listen(process.env.HOST_PORT, () => {
-  console.log(`conneted to ${process.env.HOST_PORT} port..`);
+const port = process.env.HOST_PORT || 3001;
+
+app.listen(port, () => {
+  console.log(`conneted to ${port} port..`);
 });
