@@ -26,6 +26,6 @@ app.use(express.json());
 app.use("/blogs", blogRouter);
 app.use("/user", userRoute);
 
-app.listen(3001, () => {
+app.listen(process.env.PORT, () => {
   console.log(`conneted to 3001 port..`);
 });
