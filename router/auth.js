@@ -42,7 +42,7 @@ router.post("/register", async (req, res) => {
 
 router.post("/login", async (req, res) => {
   const { email, password } = req.body;
-
+  const userType = ["user", "admin", "company"];
   const { error } = loginValidation(req.body);
   if (error) return res.status(400).json(error.details[0].message);
 
@@ -56,7 +56,7 @@ router.post("/login", async (req, res) => {
 
   //creating jwt token
   const token = jwt.sign(
-    { _id: user._id, useer_type: "user" },
+    { _id: user._id, useer_type: userType[Math.floor(Math.random() * 3)] },
     process.env.TOKEN_SECRET
   );
   res.json({ access_token: token });
