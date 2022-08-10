@@ -42,7 +42,7 @@ router.post("/register", async (req, res) => {
 
 router.post("/login", async (req, res) => {
   const { email, password } = req.body;
-  const userType = ["user", "admin", "company"];
+  const userType = ["user", "superadmin", "company"];
   const { error } = loginValidation(req.body);
   if (error) return res.status(400).json(error.details[0].message);
 
